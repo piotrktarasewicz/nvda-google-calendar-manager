@@ -18,6 +18,7 @@
   const errorBox = document.getElementById('errorBox');
   const progressLabel = document.getElementById('progressLabel');
   const progressFill = document.getElementById('progressFill');
+  const progressBar = progressFill.closest('[role="progressbar"]');
   const sessionMeta = document.getElementById('sessionMeta');
   const categoryBadge = document.getElementById('categoryBadge');
   const questionTitle = document.getElementById('questionTitle');
@@ -226,6 +227,7 @@
 
     progressLabel.textContent = `Pytanie ${currentIndex + 1} z ${sessionQuestions.length}`;
     progressFill.style.width = `${progress}%`;
+    progressBar.setAttribute('aria-valuenow', String(progress));
     sessionMeta.textContent = 'Nowa sesja, nowe pytania';
     categoryBadge.textContent = categoryLabel(question.categoryId);
     questionTitle.textContent = question.prompt;
