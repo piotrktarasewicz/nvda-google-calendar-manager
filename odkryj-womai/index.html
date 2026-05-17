@@ -23,16 +23,25 @@
 
       <div id="helpBox" class="help-box hidden" hidden>
         <div class="feedback-title">Jak to działa?</div>
-        <div>Odpowiadasz na krótką serię pytań. Po każdej odpowiedzi od razu zobaczysz krótkie wyjaśnienie. Na końcu możesz wrócić po kolejne wyzwanie.</div>
+        <div>Możesz zagrać w krótki quiz albo poznać kilka ciekawostek o WOMAI. W quizie po każdej odpowiedzi od razu zobaczysz krótkie wyjaśnienie.</div>
       </div>
 
       <div id="startView">
         <h1>Krótka ścieżka pełna pytań i ciekawostek</h1>
-        <p class="lead">Zagraj, sprawdź się i zobacz, co uda Ci się odkryć tym razem. Każda sesja to nowy zestaw pytań.</p>
+        <p class="lead">Zagraj, sprawdź się albo po prostu poznaj WOMAI w kilku krótkich informacjach.</p>
         <div id="loadingBox" class="help-box">Trwa pobieranie pytań…</div>
         <div id="errorBox" class="error-box hidden" aria-live="assertive"></div>
-        <div class="actions">
-          <button id="startBtn" class="primary" type="button" disabled>Zacznij</button>
+        <div class="start-options" aria-label="Wybierz sposób odkrywania WOMAI">
+          <div class="option-card">
+            <h2>Quiz</h2>
+            <p>Krótka seria pytań z odpowiedziami i prostym wyjaśnieniem po każdym wyborze.</p>
+            <button id="startBtn" class="primary" type="button" disabled>Zagraj w quiz</button>
+          </div>
+          <div class="option-card">
+            <h2>Ciekawostki</h2>
+            <p>Spokojny tryb bez oceniania. Kilka krótkich informacji o WOMAI, zmysłach i doświadczeniach.</p>
+            <button id="factsBtn" type="button" disabled>Poznaj ciekawostki</button>
+          </div>
         </div>
       </div>
 
@@ -61,6 +70,20 @@
         </div>
       </div>
 
+      <div id="factsView" class="hidden">
+        <div class="badge" id="factsBadge">Ciekawostka</div>
+        <h2 id="factsHeading" tabindex="-1" class="focus-anchor">Ciekawostka o WOMAI</h2>
+        <div class="fact-card">
+          <p id="factsText"></p>
+          <p id="factsMeta" class="small-note"></p>
+        </div>
+        <div class="meta-actions">
+          <button id="nextFactBtn" class="primary" type="button">Następna ciekawostka</button>
+          <button id="factsQuizBtn" type="button">Zagraj w quiz</button>
+          <button id="factsBackBtn" type="button">Wróć</button>
+        </div>
+      </div>
+
       <div id="summaryView" class="hidden">
         <div class="badge">Podsumowanie</div>
         <h2 tabindex="-1" id="summaryHeading" class="focus-anchor">To koniec, brawo!</h2>
@@ -70,6 +93,7 @@
         </div>
         <div class="actions">
           <button id="playAgainBtn" class="primary" type="button">Zagraj ponownie</button>
+          <button id="summaryFactsBtn" type="button">Poznaj ciekawostki</button>
         </div>
       </div>
 
