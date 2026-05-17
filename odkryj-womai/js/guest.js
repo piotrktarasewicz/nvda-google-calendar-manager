@@ -9,9 +9,12 @@
   const startView = document.getElementById('startView');
   const quizView = document.getElementById('quizView');
   const summaryView = document.getElementById('summaryView');
+  const factsView = document.getElementById('factsView');
   const startBtn = document.getElementById('startBtn');
+  const factsBtn = document.getElementById('factsBtn');
   const restartBtn = document.getElementById('restartBtn');
   const playAgainBtn = document.getElementById('playAgainBtn');
+  const summaryFactsBtn = document.getElementById('summaryFactsBtn');
   const helpBtn = document.getElementById('helpBtn');
   const helpBox = document.getElementById('helpBox');
   const loadingBox = document.getElementById('loadingBox');
@@ -30,16 +33,26 @@
   const nextBtn = document.getElementById('nextBtn');
   const scoreText = document.getElementById('scoreText');
   const summaryHeading = document.getElementById('summaryHeading');
+  const factsBadge = document.getElementById('factsBadge');
+  const factsHeading = document.getElementById('factsHeading');
+  const factsText = document.getElementById('factsText');
+  const factsMeta = document.getElementById('factsMeta');
+  const nextFactBtn = document.getElementById('nextFactBtn');
+  const factsBackBtn = document.getElementById('factsBackBtn');
+  const factsQuizBtn = document.getElementById('factsQuizBtn');
 
   const STORAGE_KEY = config.guest?.storageKey || 'womai_guest_progress_v2';
   const preferredCategoryOrder = config.guest?.preferredCategoryOrder || ['ciemność', 'światło', 'eksperymenty', 'womai'];
 
   let WOMAI_DATA = null;
+  let WOMAI_FACTS = [];
   let sessionQuestions = [];
   let currentIndex = 0;
+  let currentFactIndex = 0;
   let selectedChoiceId = null;
   let feedbackShown = false;
   let answers = {};
+  let factsOpen = false;
 
   function defaultMemory() {
     return {
@@ -165,6 +178,10 @@
     return sessionQuestions[currentIndex];
   }
 
+  function currentFact() {
+    return WOMAI_FACTS[currentFactIndex];
+  }
+
   function randomLead(ok) {
     const pool = ok ? positiveFeedbackLeads : negativeFeedbackLeads;
     return pool[randomIndex(pool.length)];
@@ -197,6 +214,10 @@
     requestAnimationFrame(() => summaryHeading.focus());
   }
 
+  function focusFactHeading() {
+    requestAnimationFrame(() => factsHeading.focus());
+  }
+
   function persistFinishedSession() {
     const correct = correctCount();
     memory.sessionsCompleted += 1;
@@ -219,11 +240,27 @@
     errorBox.classList.add('hidden');
   }
 
+  function renderFacts() {
+    const fact = currentFact();
+    if (!fact) return;
+
+    factsBadge.textContent = fact.category || 'Ciekawostka';
+    factsHeading.textContent = fact.title;
+    factsText.textContent = fact.text;
+    factsMeta.textContent = `Ciekawostka ${currentFactIndex + 1} z ${WOMAI_FACTS.length}`;
+  }
+
   function render() {
     const showSummary = sessionQuestions.length > 0 && currentIndex >= sessionQuestions.length;
-    startView.classList.toggle('hidden', sessionQuestions.length > 0);
-    quizView.classList.toggle('hidden', sessionQuestions.length === 0 || showSummary);
-    summaryView.classList.toggle('hidden', !showSummary);
+    startView.classList.toggle('hidden', factsOpen || sessionQuestions.length > 0);
+    quizView.classList.toggle('hidden', factsOpen || sessionQuestions.length === 0 || showSummary);
+    summaryView.classList.toggle('hidden', factsOpen || !showSummary);
+    factsView.classList.toggle('hidden', !factsOpen);
+
+    if (factsOpen) {
+      renderFacts();
+      return;
+    }
 
     if (showSummary) {
       scoreText.textContent = `${correctCount()} / ${sessionQuestions.length}`;
@@ -290,6 +327,7 @@
   }
 
   function startSession() {
+    factsOpen = false;
     sessionQuestions = buildSessionQuestions();
     currentIndex = 0;
     selectedChoiceId = null;
@@ -301,6 +339,31 @@
     }
     render();
     focusQuestionHeading();
+  }
+
+  function openFacts() {
+    if (!WOMAI_FACTS.length) {
+      showError('Nie udało się załadować ciekawostek. Spróbuj ponownie za chwilę.');
+      return;
+    }
+    factsOpen = true;
+    render();
+    focusFactHeading();
+  }
+
+  function closeFacts() {
+    factsOpen = false;
+    render();
+    if (!sessionQuestions.length) {
+      requestAnimationFrame(() => factsBtn.focus());
+    }
+  }
+
+  function nextFact() {
+    if (!WOMAI_FACTS.length) return;
+    currentFactIndex = (currentFactIndex + 1) % WOMAI_FACTS.length;
+    renderFacts();
+    focusFactHeading();
   }
 
   async function loadGuestData() {
@@ -316,6 +379,18 @@
       loadingBox.textContent = 'Nie udało się pobrać pytań.';
       showError(error.message || 'Nie udało się pobrać pytań.');
       startBtn.disabled = true;
+    }
+  }
+
+  async function loadFactsData() {
+    try {
+      const data = await api.getFactsData();
+      WOMAI_FACTS = Array.isArray(data.facts) ? data.facts.filter(fact => fact && fact.active !== false) : [];
+      factsBtn.disabled = WOMAI_FACTS.length === 0;
+      if (summaryFactsBtn) summaryFactsBtn.disabled = WOMAI_FACTS.length === 0;
+    } catch (error) {
+      factsBtn.disabled = true;
+      if (summaryFactsBtn) summaryFactsBtn.disabled = true;
     }
   }
 
@@ -348,8 +423,13 @@
   });
 
   startBtn.addEventListener('click', startSession);
+  factsBtn.addEventListener('click', openFacts);
   restartBtn.addEventListener('click', startSession);
   playAgainBtn.addEventListener('click', startSession);
+  if (summaryFactsBtn) summaryFactsBtn.addEventListener('click', openFacts);
+  nextFactBtn.addEventListener('click', nextFact);
+  factsBackBtn.addEventListener('click', closeFacts);
+  factsQuizBtn.addEventListener('click', startSession);
 
   helpBtn.addEventListener('click', () => {
     const willShow = helpBox.hidden;
@@ -359,4 +439,5 @@
   });
 
   loadGuestData();
+  loadFactsData();
 }());
