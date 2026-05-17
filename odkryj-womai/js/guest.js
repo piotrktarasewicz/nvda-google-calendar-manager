@@ -2,9 +2,53 @@
   'use strict';
 
   const config = window.WOMAI_CONFIG || {};
-  const api = window.WOMAI_API;
+  const api = window.WOMAI_API || {};
   const positiveFeedbackLeads = ['Brawo.', 'Super.', 'Świetnie.', 'Bardzo dobrze.', 'Dokładnie tak.'];
   const negativeFeedbackLeads = ['Nie do końca.', 'Tym razem nie.', 'To jeszcze nie to.', 'Spójrzmy na to inaczej.'];
+  const DEFAULT_FACTS = [
+    {
+      id: 'default-womai-czym-jest',
+      category: 'O WOMAI',
+      title: 'Miejsce, które uruchamia zmysły',
+      text: 'WOMAI to przestrzeń, w której nauka, doświadczenie i zmysły spotykają się w praktyce. Gość nie tylko czyta lub słucha o świecie, ale może go sprawdzać przez własne odczucia.',
+      active: true
+    },
+    {
+      id: 'default-ciemnosc-przewodnicy',
+      category: 'W stronę ciemności',
+      title: 'Ciemność prowadzona przez doświadczenie',
+      text: 'Na ścieżce w ciemności bardzo ważną rolę pełnią przewodnicy. To oni pomagają gościom bezpiecznie wejść w sytuację, w której wzrok przestaje być głównym źródłem informacji.',
+      active: true
+    },
+    {
+      id: 'default-zmysly-sluch',
+      category: 'Zmysły',
+      title: 'Słuch potrafi zaskoczyć',
+      text: 'Gdy nie korzystamy ze wzroku, zaczynamy wyraźniej zauważać dźwięki. Ich kierunek, odległość i charakter mogą powiedzieć o otoczeniu więcej, niż zwykle przypuszczamy.',
+      active: true
+    },
+    {
+      id: 'default-swiatlo-obserwacja',
+      category: 'W stronę światła',
+      title: 'Światło zmienia sposób patrzenia',
+      text: 'To, co widzimy, zależy nie tylko od oczu, ale też od światła, kontrastu, tła i interpretacji mózgu. Dlatego proste doświadczenia optyczne potrafią być tak zaskakujące.',
+      active: true
+    },
+    {
+      id: 'default-dostepnosc-praktyka',
+      category: 'Dostępność',
+      title: 'Dostępność to praktyka, nie hasło',
+      text: 'O dostępności najłatwiej mówić teoretycznie, ale najlepiej rozumie się ją przez doświadczenie. WOMAI pozwala zobaczyć, jak wiele zależy od sposobu komunikacji, przestrzeni i uważności na drugiego człowieka.',
+      active: true
+    },
+    {
+      id: 'default-eksperyment-pytanie',
+      category: 'Eksperymenty',
+      title: 'Dobre pytanie jest początkiem odkrycia',
+      text: 'W centrum nauki pytanie często jest ważniejsze niż szybka odpowiedź. To ono uruchamia ciekawość i prowadzi do samodzielnego sprawdzania, porównywania i wyciągania wniosków.',
+      active: true
+    }
+  ];
 
   const startView = document.getElementById('startView');
   const quizView = document.getElementById('quizView');
@@ -45,7 +89,7 @@
   const preferredCategoryOrder = config.guest?.preferredCategoryOrder || ['ciemność', 'światło', 'eksperymenty', 'womai'];
 
   let WOMAI_DATA = null;
-  let WOMAI_FACTS = [];
+  let WOMAI_FACTS = DEFAULT_FACTS.slice();
   let sessionQuestions = [];
   let currentIndex = 0;
   let currentFactIndex = 0;
@@ -240,6 +284,14 @@
     errorBox.classList.add('hidden');
   }
 
+  function setFacts(facts) {
+    const nextFacts = Array.isArray(facts) ? facts.filter(fact => fact && fact.active !== false) : [];
+    WOMAI_FACTS = nextFacts.length ? nextFacts : DEFAULT_FACTS.slice();
+    currentFactIndex = Math.min(currentFactIndex, Math.max(WOMAI_FACTS.length - 1, 0));
+    factsBtn.disabled = WOMAI_FACTS.length === 0;
+    if (summaryFactsBtn) summaryFactsBtn.disabled = WOMAI_FACTS.length === 0;
+  }
+
   function renderFacts() {
     const fact = currentFact();
     if (!fact) return;
@@ -356,6 +408,8 @@
     render();
     if (!sessionQuestions.length) {
       requestAnimationFrame(() => factsBtn.focus());
+    } else if (currentIndex >= sessionQuestions.length) {
+      requestAnimationFrame(() => summaryFactsBtn.focus());
     }
   }
 
@@ -384,13 +438,13 @@
 
   async function loadFactsData() {
     try {
+      if (typeof api.getFactsData !== 'function') {
+        throw new Error('Brak funkcji pobierania ciekawostek.');
+      }
       const data = await api.getFactsData();
-      WOMAI_FACTS = Array.isArray(data.facts) ? data.facts.filter(fact => fact && fact.active !== false) : [];
-      factsBtn.disabled = WOMAI_FACTS.length === 0;
-      if (summaryFactsBtn) summaryFactsBtn.disabled = WOMAI_FACTS.length === 0;
+      setFacts(data.facts);
     } catch (error) {
-      factsBtn.disabled = true;
-      if (summaryFactsBtn) summaryFactsBtn.disabled = true;
+      setFacts(DEFAULT_FACTS);
     }
   }
 
@@ -438,6 +492,7 @@
     helpBtn.setAttribute('aria-expanded', String(willShow));
   });
 
+  setFacts(DEFAULT_FACTS);
   loadGuestData();
   loadFactsData();
 }());
