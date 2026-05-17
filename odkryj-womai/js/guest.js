@@ -188,7 +188,9 @@
   }
 
   function focusFeedback() {
-    requestAnimationFrame(() => feedbackTitle.focus());
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => feedbackTitle.focus());
+    });
   }
 
   function focusSummary() {
@@ -324,6 +326,7 @@
     if (!feedbackShown) {
       answers[question.id] = selectedChoiceId;
       feedbackShown = true;
+      nextBtn.blur();
       render();
       focusFeedback();
       return;
