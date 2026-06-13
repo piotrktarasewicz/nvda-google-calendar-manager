@@ -466,7 +466,7 @@
       if (!WOMAI_DATA.questions || WOMAI_DATA.questions.length < 4) {
         throw new Error('Za mało aktywnych pytań do uruchomienia sesji.');
       }
-      loadingBox.textContent = `Pobrano ${WOMAI_DATA.questions.length} pytań.`;
+      loadingBox.textContent = 'Quiz jest gotowy.';
       startBtn.disabled = false;
       hideError();
     } catch (error) {
