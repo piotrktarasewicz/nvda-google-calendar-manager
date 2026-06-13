@@ -86,7 +86,10 @@
   const factsQuizBtn = document.getElementById('factsQuizBtn');
 
   const STORAGE_KEY = config.guest?.storageKey || 'womai_guest_progress_v2';
-  const preferredCategoryOrder = config.guest?.preferredCategoryOrder || ['ciemność', 'światło', 'eksperymenty', 'womai'];
+  const categoryQuestionCounts = config.guest?.categoryQuestionCounts || {
+    'ciemność': 2,
+    'światło': 2
+  };
 
   let WOMAI_DATA = null;
   let WOMAI_FACTS = DEFAULT_FACTS.slice();
@@ -159,10 +162,39 @@
     return hit ? hit.label : id;
   }
 
-  function pickOneByCategory(categoryId, excludedIds) {
-    const candidates = WOMAI_DATA.questions.filter(q => q.active && q.isCore && q.categoryId === categoryId && !excludedIds.has(q.id));
-    if (!candidates.length) return null;
-    return shuffle(candidates)[0];
+  function configuredCategoryCounts() {
+    return Object.entries(categoryQuestionCounts)
+      .map(([categoryId, count]) => ({
+        categoryId,
+        count: Math.max(0, Number(count) || 0)
+      }))
+      .filter(item => item.categoryId && item.count > 0);
+  }
+
+  function questionCandidates(categoryId, excludedIds, coreOnly) {
+    if (!WOMAI_DATA || !Array.isArray(WOMAI_DATA.questions)) return [];
+
+    return WOMAI_DATA.questions.filter(question => {
+      if (!question || !question.active || excludedIds.has(question.id)) return false;
+      if (categoryId && question.categoryId !== categoryId) return false;
+      if (coreOnly && !question.isCore) return false;
+      return true;
+    });
+  }
+
+  function addRandomQuestions(chosen, excludedIds, candidates, count) {
+    let added = 0;
+    const randomized = shuffle(candidates);
+
+    for (let index = 0; index < randomized.length && added < count; index += 1) {
+      const question = randomized[index];
+      if (!question || excludedIds.has(question.id)) continue;
+      chosen.push(shuffledQuestion(question));
+      excludedIds.add(question.id);
+      added += 1;
+    }
+
+    return added;
   }
 
   function shuffledQuestion(question) {
@@ -191,28 +223,36 @@
   }
 
   function buildSessionQuestions() {
-    const targetCount = Number(WOMAI_DATA.settings?.sessionQuestionCount || config.guest?.sessionQuestionCountFallback || 4);
+    const counts = configuredCategoryCounts();
+    const configuredTargetCount = counts.reduce((sum, item) => sum + item.count, 0);
+    const fallbackTargetCount = Number(WOMAI_DATA.settings?.sessionQuestionCount || config.guest?.sessionQuestionCountFallback || 4);
+    const targetCount = configuredTargetCount || fallbackTargetCount;
     const chosen = [];
     const excluded = new Set();
 
-    preferredCategoryOrder.forEach(categoryId => {
-      if (chosen.length >= targetCount) return;
-      const question = pickOneByCategory(categoryId, excluded);
-      if (question) {
-        chosen.push(shuffledQuestion(question));
-        excluded.add(question.id);
+    counts.forEach(item => {
+      const coreCandidates = questionCandidates(item.categoryId, excluded, true);
+      const addedCore = addRandomQuestions(chosen, excluded, coreCandidates, item.count);
+      const missingInCategory = item.count - addedCore;
+
+      if (missingInCategory > 0) {
+        const sameCategoryCandidates = questionCandidates(item.categoryId, excluded, false);
+        addRandomQuestions(chosen, excluded, sameCategoryCandidates, missingInCategory);
       }
     });
 
-    const remaining = shuffle(
+    const configuredCategoryIds = new Set(counts.map(item => item.categoryId));
+    const fallbackPools = [
+      WOMAI_DATA.questions.filter(q => q.active && q.isCore && configuredCategoryIds.has(q.categoryId) && !excluded.has(q.id)),
+      WOMAI_DATA.questions.filter(q => q.active && configuredCategoryIds.has(q.categoryId) && !excluded.has(q.id)),
+      WOMAI_DATA.questions.filter(q => q.active && q.isCore && !excluded.has(q.id)),
       WOMAI_DATA.questions.filter(q => q.active && !excluded.has(q.id))
-    );
+    ];
 
-    while (chosen.length < targetCount && remaining.length) {
-      const next = remaining.shift();
-      chosen.push(shuffledQuestion(next));
-      excluded.add(next.id);
-    }
+    fallbackPools.forEach(pool => {
+      if (chosen.length >= targetCount) return;
+      addRandomQuestions(chosen, excluded, pool, targetCount - chosen.length);
+    });
 
     const session = shuffle(chosen).slice(0, targetCount);
     return avoidSameFirstQuestion(session);
