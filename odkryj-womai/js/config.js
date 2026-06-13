@@ -3,7 +3,10 @@ window.WOMAI_CONFIG = {
   requestTimeoutMs: 10000,
   guest: {
     sessionQuestionCountFallback: 4,
-    preferredCategoryOrder: ['ciemność', 'światło', 'eksperymenty', 'womai'],
+    categoryQuestionCounts: {
+      'ciemność': 2,
+      'światło': 2
+    },
     storageKey: 'womai_guest_progress_v2',
     fallbackDataUrl: '/odkryj-womai/data/fallback-questions.json',
     factsDataUrl: '/odkryj-womai/data/facts.json',
