@@ -15,7 +15,10 @@
     <section class="card">
       <div class="topbar brand-header">
         <div class="brand" aria-label="WOMAI">
-          <img class="brand-logo" src="./assets/logo-womai-white.png" alt="WOMAI" />
+          <div class="brand-mark" aria-hidden="true">
+            <img class="brand-logo" src="./assets/logo-womai-white.png" alt="" decoding="async" onerror="this.hidden=true; this.nextElementSibling.hidden=false" />
+            <span class="brand-logo-fallback" hidden>WOMAI</span>
+          </div>
           <div>
             <div class="brand-name">Odkryj WOMAI</div>
             <div class="badge">Quiz doświadczeń</div>
