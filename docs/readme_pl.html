@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Calendar Manager - Instrukcja obsługi</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  font-size: 20px;
+}
+h1, h2, h3 {
+  line-height: 1.3;
+}
+code {
+  font-family: Consolas, monospace;
+  font-size: 0.95em;
+}
+.section {
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+<h1>Google Calendar Manager</h1>
+
+<p>English version: <a href="readme.html">readme.html</a></p>
+
+<p>
+Google Calendar Manager to dodatek do NVDA dla systemu Windows. Pozwala zalogować się do Kalendarza Google,
+wybrać kalendarze, odczytywać wydarzenia i wykonywać podstawowe operacje na wydarzeniach z klawiatury.
+</p>
+
+<div class="section">
+<h2>Funkcje</h2>
+<p>Dodatek umożliwia:</p>
+<ul>
+  <li>logowanie do konta Google przez przeglądarkę,</li>
+  <li>sprawdzenie stanu logowania do Google Calendar,</li>
+  <li>wybór kalendarzy używanych przez dodatek,</li>
+  <li>odczyt wydarzeń na dziś i następne sześć dni,</li>
+  <li>odczyt wydarzeń dla wybranego dnia,</li>
+  <li>wyszukiwanie wydarzeń według tekstu w wybranym zakresie czasu,</li>
+  <li>przełączanie między prostym i rozszerzonym trybem odczytu,</li>
+  <li>informowanie o wydarzeniach trwających,</li>
+  <li>pomijanie zakończonych wydarzeń podczas odczytu bieżącego dnia,</li>
+  <li>tworzenie nowych wydarzeń, w tym cyklicznych,</li>
+  <li>edycję istniejących wydarzeń,</li>
+  <li>usuwanie jednego lub wielu zaznaczonych wydarzeń.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Zakres działania</h2>
+<p>
+Google Calendar Manager służy do podstawowej obsługi kalendarza z poziomu NVDA. Nie zastępuje pełnego
+interfejsu webowego Kalendarza Google.
+</p>
+<p>Dodatek nie obsługuje:</p>
+<ul>
+  <li>uczestników spotkań,</li>
+  <li>linków Google Meet,</li>
+  <li>wyszukiwania dostępności sal lub uczestników,</li>
+  <li>wyszukiwania miejsc w Mapach Google,</li>
+  <li>załączników,</li>
+  <li>przypomnień kalendarza.</li>
+</ul>
+<p>
+Pole lokalizacji, jeśli jest używane, jest zwykłym tekstem wydarzenia. Dodatek nie wyszukuje miejsc
+w Mapach Google i nie weryfikuje adresów.
+</p>
+</div>
+
+<div class="section">
+<h2>Wymagania</h2>
+<ul>
+  <li>Windows</li>
+  <li>NVDA 2026.1 lub nowszy</li>
+  <li>dostęp do Internetu</li>
+  <li>konto Google z włączonym Kalendarzem Google</li>
+</ul>
+<p>
+Osobna instalacja Pythona w systemie nie jest wymagana. Dodatek korzysta ze środowiska Pythona dostarczanego
+przez NVDA i zawiera potrzebne biblioteki Pythona.
+</p>
+</div>
+
+<div class="section">
+<h2>Instalacja</h2>
+<ol>
+  <li>Zainstaluj dodatek w NVDA.</li>
+  <li>Uruchom ponownie NVDA, jeśli będzie to wymagane.</li>
+  <li>Upewnij się, że dodatek jest aktywny.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>Pierwsze logowanie</h2>
+<p>Aby zalogować się do Kalendarza Google:</p>
+<ol>
+  <li>Naciśnij <code>NVDA+Shift+G</code>, a następnie <code>0</code>.</li>
+  <li>Otworzy się domyślna przeglądarka internetowa.</li>
+  <li>Zaloguj się do konta Google i zaakceptuj dostęp do kalendarza.</li>
+  <li>Po zakończeniu logowania wróć do NVDA.</li>
+  <li>Naciśnij ponownie <code>NVDA+Shift+G</code>, a następnie <code>0</code>, aby sprawdzić stan logowania.</li>
+</ol>
+<p>
+Jeśli logowanie zakończyło się powodzeniem, dodatek ogłosi, że użytkownik jest zalogowany do Google Calendar.
+</p>
+</div>
+
+<div class="section">
+<h2>Skróty klawiaturowe</h2>
+
+<p>Najpierw naciśnij <code>NVDA+Shift+G</code>, aby włączyć warstwę Google Calendar Manager. Następnie naciśnij jeden z poniższych klawiszy:</p>
+
+<h3>Logowanie i status</h3>
+<p><code>0</code> - rozpoczęcie logowania do Google albo sprawdzenie stanu logowania.</p>
+
+<h3>Odczyt wydarzeń</h3>
+<p><code>1</code> - odczyt wydarzeń na dziś.</p>
+<p><code>2</code> - odczyt wydarzeń na jutro.</p>
+<p><code>3</code> - odczyt wydarzeń na pojutrze.</p>
+<p><code>4</code> - odczyt wydarzeń za trzy dni.</p>
+<p><code>5</code> - odczyt wydarzeń za cztery dni.</p>
+<p><code>6</code> - odczyt wydarzeń za pięć dni.</p>
+<p><code>7</code> - odczyt wydarzeń za sześć dni.</p>
+<p><code>P</code> - wybór dnia, odczyt wydarzeń z tego dnia i dostęp do działań na wydarzeniach z tego dnia.</p>
+<p><code>S</code> - wyszukiwanie wydarzeń według tekstu.</p>
+
+<h3>Ustawienia</h3>
+<p><code>8</code> - przełączenie prostego i rozszerzonego trybu odczytu.</p>
+<p><code>9</code> - wybór kalendarzy używanych przez dodatek.</p>
+
+<h3>Zarządzanie wydarzeniami</h3>
+<p><code>N</code> - dodanie wydarzenia.</p>
+<p><code>E</code> - edycja wydarzenia.</p>
+<p><code>U</code> - usunięcie wydarzenia.</p>
+<p><code>H</code> - pokazanie pomocy ze skrótami.</p>
+
+<h3>Skróty bezpośrednie</h3>
+<p>
+Dodatek udostępnia też skróty bezpośrednie:
+<code>NVDA+Control+Shift+N</code> dodaje wydarzenie,
+<code>NVDA+Control+Shift+E</code> edytuje wydarzenie, a
+<code>NVDA+Control+Shift+U</code> usuwa wydarzenie.
+</p>
+</div>
+
+<div class="section">
+<h2>Wybór kalendarzy</h2>
+<p>Po otwarciu okna wyboru kalendarzy:</p>
+<ul>
+  <li>strzałki góra i dół przemieszczają po liście,</li>
+  <li>spacja zaznacza lub odznacza wybrany kalendarz,</li>
+  <li>Enter zapisuje wybór i zamyka okno,</li>
+  <li>Escape zamyka okno bez zapisywania zmian.</li>
+</ul>
+<p>
+Jeżeli użytkownik nie zaznaczy żadnego kalendarza, dodatek automatycznie używa kalendarza głównego.
+</p>
+</div>
+
+<div class="section">
+<h2>Tryby odczytu</h2>
+
+<h3>Tryb prosty</h3>
+<p>Tryb prosty odczytuje skrócone informacje o wydarzeniach.</p>
+<p>Przykłady:</p>
+<ul>
+  <li><code>14:30, Spotkanie</code></li>
+  <li><code>do 15:00, trwa Spotkanie zespołu</code></li>
+  <li><code>całodniowe, Urlop</code></li>
+</ul>
+<p>Tryb prosty jest przeznaczony do szybkiego sprawdzania kalendarza.</p>
+
+<h3>Tryb rozszerzony</h3>
+<p>Tryb rozszerzony odczytuje pełniejsze informacje o wydarzeniach.</p>
+<p>Przykłady:</p>
+<ul>
+  <li><code>14:30 do 15:30, Spotkanie</code></li>
+  <li><code>do 15:00, trwa Spotkanie zespołu</code></li>
+  <li><code>wydarzenie całodniowe, Urlop</code></li>
+</ul>
+<p>
+Jeśli odczytywanych jest kilka kalendarzy, dodatek może podać również nazwę kalendarza.
+</p>
+</div>
+
+<div class="section">
+<h2>Zachowanie przy wydarzeniach bieżących</h2>
+<p>Dla bieżącego dnia dodatek:</p>
+<ul>
+  <li>pomija wydarzenia już zakończone,</li>
+  <li>informuje, jeśli wydarzenie trwa,</li>
+  <li>odczytuje wydarzenia nadchodzące.</li>
+</ul>
+<p>Przykład:</p>
+<p><code>do 15:00, trwa Spotkanie zespołu</code></p>
+<p>Dla kolejnych dni odczytywane są wszystkie wydarzenia w danym dniu.</p>
+</div>
+
+<div class="section">
+<h2>Wyszukiwanie wydarzeń</h2>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, a następnie <code>S</code>. Wpisz szukany tekst i wybierz zakres czasu.
+Dostępne zakresy to najbliższy miesiąc, najbliższe 3 miesiące, najbliższe 6 miesięcy, najbliższe 12 miesięcy
+albo własny zakres dat.
+</p>
+<p>
+Wyszukiwanie odbywa się w wybranych kalendarzach. Google Calendar może dopasować wpisany tekst do tytułu,
+opisu albo lokalizacji wydarzenia. Dlatego dokumentacja opisuje tę funkcję jako wyszukiwanie wydarzeń,
+a nie jako wyszukiwanie wyłącznie po tytule.
+</p>
+<p>
+Wyniki wyszukiwania są pokazywane jako lista z datami i godzinami wydarzeń. Z okna wyników można rozpocząć
+nowe wyszukiwanie albo wybrać znalezione wydarzenie do edycji lub usunięcia. Jeśli znalezione wydarzenie należy
+do cyklu, dodatek nadal pyta, czy operacja ma dotyczyć tylko wybranego wystąpienia, czy całego cyklu.
+</p>
+</div>
+
+<div class="section">
+<h2>Tworzenie wydarzeń</h2>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, potem <code>N</code>, albo użyj skrótu <code>NVDA+Control+Shift+N</code>.
+Dodatek otworzy okno tworzenia wydarzenia.
+</p>
+<p>
+Możesz też nacisnąć <code>NVDA+Shift+G</code>, potem <code>P</code>, wybrać dzień i użyć przycisku Dodaj wydarzenie
+w oknie wyników dla wybranego dnia. W takim przypadku okno tworzenia wydarzenia otworzy się z już wpisaną datą tego dnia.
+</p>
+<p>Można podać:</p>
+<ul>
+  <li>kalendarz,</li>
+  <li>tytuł,</li>
+  <li>datę rozpoczęcia i zakończenia,</li>
+  <li>godzinę rozpoczęcia i zakończenia, jeśli wydarzenie nie jest całodniowe,</li>
+  <li>lokalizację,</li>
+  <li>cykliczność.</li>
+</ul>
+<p>
+Obsługiwane typy cykliczności to: jednorazowo, codziennie, co tydzień, co miesiąc i co rok.
+Wydarzenie cykliczne może mieć datę końca albo może nie mieć daty końca cykliczności.
+</p>
+</div>
+
+<div class="section">
+<h2>Edycja wydarzeń</h2>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, potem <code>E</code>, albo użyj skrótu <code>NVDA+Control+Shift+E</code>.
+Wybierz dzień, zaznacz wydarzenie, zmień pola i zapisz zmiany.
+</p>
+<p>
+Jeżeli wybrane wydarzenie należy do cyklu, dodatek pyta, czy edytować tylko wybrane wystąpienie,
+czy cały cykl. Opcja edycji tego i następnych wystąpień nie jest dostępna.
+</p>
+</div>
+
+<div class="section">
+<h2>Usuwanie wydarzeń</h2>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, potem <code>U</code>, albo użyj skrótu <code>NVDA+Control+Shift+U</code>.
+Wybierz dzień, zaznacz jedno lub więcej wydarzeń, przejdź do przycisku Usuń i potwierdź operację.
+</p>
+<p>
+Jeżeli jedno wybrane wydarzenie należy do cyklu, dodatek pyta, czy usunąć tylko wybrane wystąpienie,
+czy cały cykl. Jeżeli wśród kilku zaznaczonych wydarzeń są wydarzenia cykliczne, dodatek pyta raz
+i stosuje wybrany zakres do wszystkich wydarzeń cyklicznych w tym zaznaczeniu. Opcja usunięcia tego
+i następnych wystąpień nie jest dostępna.
+</p>
+</div>
+
+<div class="section">
+<h2>Język dodatku</h2>
+<p>
+Dodatek używa języka NVDA dla własnych komunikatów i okien dialogowych.
+</p>
+<p>Obecnie obsługiwane są:</p>
+<ul>
+  <li>angielski</li>
+  <li>polski</li>
+</ul>
+<p>
+Jeżeli język NVDA nie jest obsługiwany, dodatek używa języka angielskiego.
+Tytuły, opisy i lokalizacje wydarzeń są treścią użytkownika z Kalendarza Google i nie są tłumaczone przez dodatek.
+</p>
+</div>
+
+<div class="section">
+<h2>Pliki użytkownika</h2>
+<p>Dodatek może tworzyć lokalnie następujące pliki:</p>
+<ul>
+  <li><code>token.json</code> - lokalny token logowania Google,</li>
+  <li><code>settings.json</code> - zapis wybranych kalendarzy i trybu odczytu,</li>
+  <li><code>last_oauth_error.txt</code> - plik pomocniczy używany przy diagnostyce błędów logowania.</li>
+</ul>
+<p>
+Pliki te są przechowywane lokalnie w katalogu konfiguracji użytkownika NVDA, w podkatalogu
+<code>googleCalendarManager</code>. Przy aktualizacji ze starszych wersji testowych dodatek może skopiować
+dotychczasowe pliki z poprzedniego podkatalogu <code>googleCalendarReader</code> albo z katalogu dodatku,
+jeśli w obecnej lokalizacji jeszcze ich nie ma.
+</p>
+</div>
+
+<div class="section">
+<h2>Prywatność</h2>
+<p>
+Dodatek używa Google Calendar API do odczytu i modyfikowania wydarzeń zgodnie z działaniami użytkownika.
+Prosi tylko o zakresy Calendar API potrzebne do obecnych funkcji:
+</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/calendar.events</code> - odczyt i zarządzanie wydarzeniami w kalendarzach użytkownika,</li>
+  <li><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code> - odczyt listy kalendarzy, aby można było wybrać kalendarze w dodatku,</li>
+  <li><code>https://www.googleapis.com/auth/calendar.settings.readonly</code> - odczyt ustawień Kalendarza, na przykład strefy czasowej.</li>
+</ul>
+<p>
+Dodatek nie prosi o uprawnienie do tworzenia, usuwania, udostępniania ani zmieniania samych kalendarzy.
+</p>
+<p>Dodatek:</p>
+<ul>
+  <li>nie wysyła danych kalendarza na serwery kontrolowane przez autora,</li>
+  <li>nie udostępnia danych kalendarza zewnętrznym usługom kontrolowanym przez autora,</li>
+  <li>nie używa danych z Kalendarza Google do reklam ani analityki.</li>
+</ul>
+<p>
+Dane kalendarza są przetwarzane lokalnie przez dodatek i wymieniane z Google tylko w zakresie potrzebnym
+do działania Google Calendar API. Token logowania Google jest przechowywany lokalnie w katalogu konfiguracji użytkownika NVDA.
+</p>
+</div>
+
+<div class="section">
+<h2>Rozwiązywanie problemów</h2>
+
+<h3>Dodatek mówi, że użytkownik nie jest zalogowany</h3>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, następnie <code>0</code> i wykonaj logowanie w przeglądarce.
+</p>
+
+<h3>Otwiera się przeglądarka, ale logowanie nie kończy się poprawnie</h3>
+<p>
+Sprawdź połączenie z Internetem oraz upewnij się, że konto Google ma dostęp do Kalendarza Google.
+</p>
+
+<h3>Dodatek czyta z niewłaściwego kalendarza</h3>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, następnie <code>9</code> i sprawdź, które kalendarze są zaznaczone.
+</p>
+
+<h3>Dodatek czyta zbyt dużo albo zbyt mało informacji</h3>
+<p>
+Naciśnij <code>NVDA+Shift+G</code>, następnie <code>8</code>, aby przełączyć tryb odczytu.
+</p>
+
+<h3>Tworzenie, edycja albo usuwanie wydarzenia kończy się błędem</h3>
+<p>
+Sprawdź szczegóły błędu pokazane przez dodatek. Upewnij się też, że wybrany kalendarz pozwala na daną operację.
+Niektóre kalendarze udostępnione mogą pozwalać na odczyt, ale nie na edycję.
+</p>
+</div>
+
+<div class="section">
+<h2>Autor</h2>
+<p>Piotr Tarasewicz</p>
+<p>W przypadku problemów lub pytań dotyczących działania dodatku skontaktuj się z autorem.</p>
+</div>
+</body>
+</html>

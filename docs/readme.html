@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Calendar Manager - User Guide</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  font-size: 20px;
+}
+h1, h2, h3 {
+  line-height: 1.3;
+}
+code {
+  font-family: Consolas, monospace;
+  font-size: 0.95em;
+}
+.section {
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+<h1>Google Calendar Manager</h1>
+
+<p>Polish version: <a href="readme_pl.html">readme_pl.html</a></p>
+
+<p>
+Google Calendar Manager is an NVDA add-on for Windows. It lets you sign in to Google Calendar,
+choose calendars, read events, and perform basic event operations from the keyboard.
+</p>
+
+<div class="section">
+<h2>Features</h2>
+<p>The add-on can:</p>
+<ul>
+  <li>sign in to a Google account through a web browser,</li>
+  <li>check Google Calendar sign-in status,</li>
+  <li>choose which calendars are used by the add-on,</li>
+  <li>read events for today and the next six days,</li>
+  <li>read events for a selected day,</li>
+  <li>search events by text in a selected time range,</li>
+  <li>switch between short and full speech modes,</li>
+  <li>announce events that are currently in progress,</li>
+  <li>skip finished events when reading the current day,</li>
+  <li>add new events, including recurring events,</li>
+  <li>edit existing events,</li>
+  <li>delete one or more selected events.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Scope</h2>
+<p>
+Google Calendar Manager is intended for basic calendar access from NVDA. It does not try to replace
+the full Google Calendar web interface.
+</p>
+<p>The add-on does not manage:</p>
+<ul>
+  <li>meeting participants,</li>
+  <li>Google Meet links,</li>
+  <li>room or participant availability,</li>
+  <li>Google Maps place search,</li>
+  <li>attachments,</li>
+  <li>calendar reminders.</li>
+</ul>
+<p>
+The location field, when used, is plain event text. The add-on does not search Google Maps or verify addresses.
+</p>
+</div>
+
+<div class="section">
+<h2>Requirements</h2>
+<ul>
+  <li>Windows</li>
+  <li>NVDA 2026.1 or newer</li>
+  <li>Internet access</li>
+  <li>a Google account with Google Calendar enabled</li>
+</ul>
+<p>
+A separate Python installation is not required. The add-on uses the Python environment provided by NVDA
+and includes the Python libraries it needs.
+</p>
+</div>
+
+<div class="section">
+<h2>Installation</h2>
+<ol>
+  <li>Install the add-on in NVDA.</li>
+  <li>Restart NVDA if required.</li>
+  <li>Make sure the add-on is enabled.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>First sign-in</h2>
+<p>To sign in to Google Calendar:</p>
+<ol>
+  <li>Press <code>NVDA+Shift+G</code>, then press <code>0</code>.</li>
+  <li>Your default web browser will open.</li>
+  <li>Sign in to your Google account and allow calendar access.</li>
+  <li>After sign-in is complete, return to NVDA.</li>
+  <li>Press <code>NVDA+Shift+G</code>, then press <code>0</code> again to check the sign-in status.</li>
+</ol>
+<p>
+If sign-in was successful, the add-on will announce that you are signed in to Google Calendar.
+</p>
+</div>
+
+<div class="section">
+<h2>Keyboard shortcuts</h2>
+<p>First press <code>NVDA+Shift+G</code> to activate the Google Calendar Manager layer. Then press one of the following keys:</p>
+
+<h3>Sign-in and status</h3>
+<p><code>0</code> - start Google sign-in or check sign-in status.</p>
+
+<h3>Event reading</h3>
+<p><code>1</code> - read events for today.</p>
+<p><code>2</code> - read events for tomorrow.</p>
+<p><code>3</code> - read events for the day after tomorrow.</p>
+<p><code>4</code> - read events for three days from now.</p>
+<p><code>5</code> - read events for four days from now.</p>
+<p><code>6</code> - read events for five days from now.</p>
+<p><code>7</code> - read events for six days from now.</p>
+<p><code>P</code> - choose a day, read events for that day, and open event management actions for that day.</p>
+<p><code>S</code> - search events by text.</p>
+
+<h3>Settings</h3>
+<p><code>8</code> - switch between short and full speech mode.</p>
+<p><code>9</code> - choose which calendars are included.</p>
+
+<h3>Event management</h3>
+<p><code>N</code> - add an event.</p>
+<p><code>E</code> - edit an event.</p>
+<p><code>U</code> - delete an event.</p>
+<p><code>H</code> - show shortcut help.</p>
+
+<h3>Direct shortcuts</h3>
+<p>
+The add-on also provides direct shortcuts:
+<code>NVDA+Control+Shift+N</code> adds an event,
+<code>NVDA+Control+Shift+E</code> edits an event, and
+<code>NVDA+Control+Shift+U</code> deletes an event.
+</p>
+</div>
+
+<div class="section">
+<h2>Choosing calendars</h2>
+<p>In the calendar selection window:</p>
+<ul>
+  <li>Up Arrow and Down Arrow move through the list,</li>
+  <li>Space checks or unchecks the selected calendar,</li>
+  <li>Enter saves the selection and closes the window,</li>
+  <li>Escape closes the window without saving changes.</li>
+</ul>
+<p>
+If no calendar is selected, the add-on automatically uses the primary calendar.
+</p>
+</div>
+
+<div class="section">
+<h2>Speech modes</h2>
+
+<h3>Short mode</h3>
+<p>Short mode reads compact event information.</p>
+<p>Examples:</p>
+<ul>
+  <li><code>14:30, Meeting</code></li>
+  <li><code>until 15:00, Team meeting in progress</code></li>
+  <li><code>all-day, Vacation</code></li>
+</ul>
+<p>Short mode is intended for quick calendar checks.</p>
+
+<h3>Full mode</h3>
+<p>Full mode reads more complete event information.</p>
+<p>Examples:</p>
+<ul>
+  <li><code>14:30 to 15:30, Meeting</code></li>
+  <li><code>until 15:00, Team meeting in progress</code></li>
+  <li><code>all-day event, Vacation</code></li>
+</ul>
+<p>
+If multiple calendars are selected, the add-on may also announce the calendar name.
+</p>
+</div>
+
+<div class="section">
+<h2>Current-day behavior</h2>
+<p>For the current day, the add-on:</p>
+<ul>
+  <li>skips events that have already finished,</li>
+  <li>announces events that are currently in progress,</li>
+  <li>reads upcoming events.</li>
+</ul>
+<p>Example:</p>
+<p><code>until 15:00, Team meeting in progress</code></p>
+<p>For future days, all events on that day are read.</p>
+</div>
+
+<div class="section">
+<h2>Searching events</h2>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>S</code>. Enter the text to search for and choose a time range.
+Available ranges are the next month, next 3 months, next 6 months, next 12 months, or a custom date range.
+</p>
+<p>
+Search is performed in the selected calendars. Google Calendar may match the entered text in the event title,
+description, or location. For this reason, the add-on describes this feature as event search, not title-only search.
+</p>
+<p>
+Search results are shown as a list with event dates and times. From the results window you can start a new search,
+or choose a found event for editing or deletion. If a found event belongs to a recurring series, the add-on still asks
+whether the operation should affect only the selected occurrence or the entire series.
+</p>
+</div>
+
+<div class="section">
+<h2>Adding events</h2>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>N</code>, or use <code>NVDA+Control+Shift+N</code>.
+The add-on opens a dialog for the new event.
+</p>
+<p>
+You can also press <code>NVDA+Shift+G</code>, then <code>P</code>, choose a day, and use the Add event button
+in the selected-day results window. In that case, the new event dialog is opened with that day already filled in.
+</p>
+<p>You can enter:</p>
+<ul>
+  <li>calendar,</li>
+  <li>title,</li>
+  <li>start and end date,</li>
+  <li>start and end time, unless the event is all-day,</li>
+  <li>location,</li>
+  <li>recurrence.</li>
+</ul>
+<p>
+Supported recurrence options are one time, daily, weekly, monthly, and yearly. A recurring event may have
+an end date or no recurrence end date.
+</p>
+</div>
+
+<div class="section">
+<h2>Editing events</h2>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>E</code>, or use <code>NVDA+Control+Shift+E</code>.
+Choose the day, select the event, edit the fields, and save changes.
+</p>
+<p>
+If the selected event belongs to a recurring series, the add-on asks whether to edit only the selected occurrence
+or the entire series. The option to edit this and following occurrences is not included.
+</p>
+</div>
+
+<div class="section">
+<h2>Deleting events</h2>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>U</code>, or use <code>NVDA+Control+Shift+U</code>.
+Choose the day, select one or more events, then move to the Delete button and confirm the operation.
+</p>
+<p>
+If one selected event belongs to a recurring series, the add-on asks whether to delete only the selected occurrence
+or the entire series. If several selected events include recurring events, the add-on asks once and applies the chosen scope
+to all recurring events in that selection. The option to delete this and following occurrences is not included.
+</p>
+</div>
+
+<div class="section">
+<h2>Add-on language</h2>
+<p>
+The add-on uses the current NVDA language for its own messages and dialogs.
+</p>
+<p>Currently supported:</p>
+<ul>
+  <li>English</li>
+  <li>Polish</li>
+</ul>
+<p>
+If the current NVDA language is not supported, the add-on uses English.
+Event titles, descriptions, and locations are user content from Google Calendar and are not translated by the add-on.
+</p>
+</div>
+
+<div class="section">
+<h2>User files</h2>
+<p>The add-on may create the following local files:</p>
+<ul>
+  <li><code>token.json</code> - local Google sign-in token,</li>
+  <li><code>settings.json</code> - selected calendars and speech mode settings,</li>
+  <li><code>last_oauth_error.txt</code> - helper file for OAuth error diagnostics.</li>
+</ul>
+<p>
+These files are stored locally in the NVDA user configuration directory, in the
+<code>googleCalendarManager</code> subfolder. When updating from older test versions, the add-on can copy existing
+files from the previous <code>googleCalendarReader</code> subfolder or from the add-on directory if the current
+files are not already present.
+</p>
+</div>
+
+<div class="section">
+<h2>Privacy</h2>
+<p>
+The add-on uses the Google Calendar API to read and modify calendar events according to the user's actions.
+It requests only the Calendar API scopes needed for its current features:
+</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/calendar.events</code> - read and manage events in the user's calendars,</li>
+  <li><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code> - read the user's calendar list so calendars can be selected in the add-on,</li>
+  <li><code>https://www.googleapis.com/auth/calendar.settings.readonly</code> - read Calendar settings such as the calendar time zone.</li>
+</ul>
+<p>
+The add-on does not request permission to create, delete, share, or change calendars themselves.
+</p>
+<p>The add-on does not:</p>
+<ul>
+  <li>send calendar data to servers controlled by the author,</li>
+  <li>share calendar data with third-party services controlled by the author,</li>
+  <li>use Google Calendar data for advertising or analytics.</li>
+</ul>
+<p>
+Calendar data is processed locally by the add-on and exchanged with Google only as needed for Google Calendar API operations.
+The Google sign-in token is stored locally in the NVDA user configuration directory.
+</p>
+</div>
+
+<div class="section">
+<h2>Troubleshooting</h2>
+
+<h3>The add-on says the user is not signed in</h3>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>0</code>, and complete sign-in in the web browser.
+</p>
+
+<h3>The browser opens but sign-in does not complete correctly</h3>
+<p>
+Check the Internet connection and make sure the Google account has access to Google Calendar.
+</p>
+
+<h3>The add-on reads from the wrong calendar</h3>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>9</code>, and check which calendars are selected.
+</p>
+
+<h3>The add-on reads too much or too little information</h3>
+<p>
+Press <code>NVDA+Shift+G</code>, then <code>8</code>, to switch the speech mode.
+</p>
+
+<h3>An add, edit, or delete operation fails</h3>
+<p>
+Check the error details shown by the add-on. Also make sure the selected calendar allows the operation.
+Some shared calendars may allow reading but not editing.
+</p>
+</div>
+
+<div class="section">
+<h2>Author</h2>
+<p>Piotr Tarasewicz</p>
+<p>In case of problems or questions about the add-on, contact the author.</p>
+</div>
+</body>
+</html>

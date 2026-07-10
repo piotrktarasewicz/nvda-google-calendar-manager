@@ -1,0 +1,29 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local NVDA and Google Calendar Manager data
+token.json
+settings.json
+last_oauth_error.txt
+last_create_event_error.txt
+last_update_event_error.txt
+last_delete_event_error.txt
+*.legacy-scope-backup
+
+# Private OAuth desktop credentials
+globalPlugins/googleCalendarManager/client_secret.json
+
+# Bundled release dependencies and generated packages
+globalPlugins/googleCalendarManager/lib/
+*.nvda-addon
+*.zip
+build/
+dist/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

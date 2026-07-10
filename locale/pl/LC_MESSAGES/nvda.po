@@ -1,0 +1,793 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: googleCalendarManager 1.0.2\n"
+"POT-Creation-Date: 2026-06-25 00:00+0000\n"
+"PO-Revision-Date: 2026-06-25 00:00+0000\n"
+"Last-Translator: Piotr Tarasewicz and ChatGPT\n"
+"Language-Team: Polish\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "All-day event"
+msgstr "Wydarzenie całodniowe"
+
+msgid "Calendar"
+msgstr "Kalendarz"
+
+msgid "Start day"
+msgstr "Dzień początkowy"
+
+msgid "Add event"
+msgstr "Dodaj wydarzenie"
+
+msgid "End day"
+msgstr "Dzień końcowy"
+
+msgid "End time, hours"
+msgstr "Godzina zakończenia, godziny"
+
+msgid "End time, minutes"
+msgstr "Godzina zakończenia, minuty"
+
+msgid "End month"
+msgstr "Miesiąc końcowy"
+
+msgid "Choose a calendar."
+msgstr "Wybierz kalendarz."
+
+msgid "Enter a valid start day."
+msgstr "Wpisz poprawny dzień początkowy."
+
+msgid "End time must be later than start time."
+msgstr "Godzina zakończenia musi być późniejsza niż godzina rozpoczęcia."
+
+msgid "End date cannot be earlier than start date."
+msgstr "Data końcowa nie może być wcześniejsza niż data początkowa."
+
+msgid "Enter a valid end day."
+msgstr "Wpisz poprawny dzień końcowy."
+
+msgid "Enter a valid end month."
+msgstr "Wpisz poprawny miesiąc końcowy."
+
+msgid "Enter a valid end time."
+msgstr "Wpisz poprawną godzinę zakończenia."
+
+msgid "Failed to add the event. Press the “Details” button to learn more."
+msgstr "Nie udało się dodać wydarzenia. Naciśnij przycisk „Szczegóły”, by dowiedzieć się więcej."
+
+msgid "Enter a valid start date."
+msgstr "Wpisz poprawną datę początkową."
+
+msgid "Enter a valid end date."
+msgstr "Wpisz poprawną datę końcową."
+
+msgid "Enter a valid start month."
+msgstr "Wpisz poprawny miesiąc początkowy."
+
+msgid "Recurrence end date cannot be earlier than start date."
+msgstr "Data końca cyklu nie może być wcześniejsza niż data początkowa."
+
+msgid "Enter a valid recurrence end day."
+msgstr "Wpisz poprawny dzień końca cyklu."
+
+msgid "Enter a valid recurrence end month."
+msgstr "Wpisz poprawny miesiąc końca cyklu."
+
+msgid "Enter a valid recurrence end date."
+msgstr "Wpisz poprawną datę końca cyklu."
+
+msgid "Enter a valid start time."
+msgstr "Wpisz poprawną godzinę rozpoczęcia."
+
+msgid "Enter the event title."
+msgstr "Wpisz tytuł wydarzenia."
+
+msgid "Location"
+msgstr "Lokalizacja"
+
+msgid "Start month"
+msgstr "Miesiąc początkowy"
+
+msgid "Recurrence end day"
+msgstr "Dzień końca cyklu"
+
+msgid "Recurrence end month"
+msgstr "Miesiąc końca cyklu"
+
+msgid "Recurrence"
+msgstr "Cykliczność"
+
+msgid "No recurrence end date"
+msgstr "Bez daty końca cyklu"
+
+msgid "Start time, hours"
+msgstr "Godzina rozpoczęcia, godziny"
+
+msgid "Start time, minutes"
+msgstr "Godzina rozpoczęcia, minuty"
+
+msgid "Added a new event to calendar {calendar}: from {start_date} to {end_date} {title}"
+msgstr "Dodano nowe wydarzenie w kalendarzu {calendar}: od {start_date} do {end_date} {title}"
+
+msgid "Added a new event to calendar {calendar}: {date} {title}"
+msgstr "Dodano nowe wydarzenie w kalendarzu {calendar}: {date} {title}"
+
+msgid "Added a new event to calendar {calendar}: {date} at {time} {title}"
+msgstr "Dodano nowe wydarzenie w kalendarzu {calendar}: {date} o {time} {title}"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Added recurring event: daily from {date}"
+msgstr "Dodano wydarzenie cykliczne: codziennie od {date}"
+
+msgid "Added recurring event: daily from {date} at {time}"
+msgstr "Dodano wydarzenie cykliczne: codziennie od {date} o {time}"
+
+msgid "Added recurring event: monthly from {date}"
+msgstr "Dodano wydarzenie cykliczne: co miesiąc od {date}"
+
+msgid "Added recurring event: monthly from {date} at {time}"
+msgstr "Dodano wydarzenie cykliczne: co miesiąc od {date} o {time}"
+
+msgid "Added recurring event: weekly from {date}"
+msgstr "Dodano wydarzenie cykliczne: co tydzień od {date}"
+
+msgid "Added recurring event: weekly from {date} at {time}"
+msgstr "Dodano wydarzenie cykliczne: co tydzień od {date} o {time}"
+
+msgid "Added recurring event: yearly from {date}"
+msgstr "Dodano wydarzenie cykliczne: co rok od {date}"
+
+msgid "Added recurring event: yearly from {date} at {time}"
+msgstr "Dodano wydarzenie cykliczne: co rok od {date} o {time}"
+
+msgid "all-day event, {summary}{calendar_label}"
+msgstr "wydarzenie całodniowe, {summary}{calendar_label}"
+
+msgid "all-day, {range_text}, {summary}"
+msgstr "całodniowe, {range_text}, {summary}"
+
+msgid "all-day, {summary}{calendar_label}"
+msgstr "całodniowe, {summary}{calendar_label}"
+
+msgid "Adding the event to the calendar..."
+msgstr "Dodaję wydarzenie do kalendarza..."
+
+msgid "Deleting the event from the calendar..."
+msgstr "Usuwam wydarzenie z kalendarza..."
+
+msgid "Deleting events from the calendar..."
+msgstr "Usuwam wydarzenia z kalendarza..."
+
+msgid "Fetching the calendar list..."
+msgstr "Pobieram listę kalendarzy..."
+
+msgid "Fetching calendar events..."
+msgstr "Pobieram wydarzenia z kalendarza..."
+
+msgid "Fetching events for the selected day..."
+msgstr "Pobieram wydarzenia z wybranego dnia..."
+
+msgid "Fetching events to delete..."
+msgstr "Pobieram wydarzenia do usunięcia..."
+
+msgid "Fetching events to edit..."
+msgstr "Pobieram wydarzenia do edycji..."
+
+msgid "Saving changes to the calendar..."
+msgstr "Zapisuję zmiany w kalendarzu..."
+
+msgid "Searching calendar events..."
+msgstr "Szukam wydarzeń w kalendarzu..."
+
+msgid "Choose calendars to read. If you select none, the primary calendar will be used."
+msgstr "Wybierz kalendarze do odczytu. Jeśli nic nie zaznaczysz, użyty będzie kalendarz główny."
+
+msgid "Google Calendar selection"
+msgstr "Wybór kalendarzy Google"
+
+msgid "Calendars"
+msgstr "Kalendarze"
+
+msgid "Calendar error"
+msgstr "Błąd kalendarzy"
+
+msgid "Could not fetch calendar list."
+msgstr "Nie udało się pobrać listy kalendarzy."
+
+msgid "calendar {name}"
+msgstr "kalendarz {name}"
+
+msgid "selected"
+msgstr "zaznaczone"
+
+msgid "{date}. No events."
+msgstr "{date}. Brak wydarzeń."
+
+msgid "{start} to {end}"
+msgstr "{start} do {end}"
+
+msgid "Delete the event from calendar {calendar}: from {start_date} to {end_date} {title}?"
+msgstr "Usunąć wydarzenie z kalendarza {calendar}: od {start_date} do {end_date} {title}?"
+
+msgid "Delete the event from calendar {calendar}: {date} {title}?"
+msgstr "Usunąć wydarzenie z kalendarza {calendar}: {date} {title}?"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Delete only this occurrence from calendar {calendar}: from {start_date} to {end_date} {title}?"
+msgstr "Usunąć tylko to wystąpienie z kalendarza {calendar}: od {start_date} do {end_date} {title}?"
+
+msgid "Delete only this occurrence from calendar {calendar}: {date} {title}?"
+msgstr "Usunąć tylko to wystąpienie z kalendarza {calendar}: {date} {title}?"
+
+msgid "Delete only this occurrence from calendar {calendar}: {date} at {time} {title}?"
+msgstr "Usunąć tylko to wystąpienie z kalendarza {calendar}: {date} o {time} {title}?"
+
+msgid "Delete {count} selected events?"
+msgstr "Usunąć {count} wybranych wydarzeń?"
+
+msgid "Delete recurring event: daily from {date}?"
+msgstr "Usunąć wydarzenie cykliczne: codziennie od {date}?"
+
+msgid "Delete recurring event: daily from {date} at {time}?"
+msgstr "Usunąć wydarzenie cykliczne: codziennie od {date} o {time}?"
+
+msgid "Delete recurring event: monthly from {date}?"
+msgstr "Usunąć wydarzenie cykliczne: co miesiąc od {date}?"
+
+msgid "Delete recurring event: monthly from {date} at {time}?"
+msgstr "Usunąć wydarzenie cykliczne: co miesiąc od {date} o {time}?"
+
+msgid "Delete recurring event: weekly from {date}?"
+msgstr "Usunąć wydarzenie cykliczne: co tydzień od {date}?"
+
+msgid "Delete recurring event: weekly from {date} at {time}?"
+msgstr "Usunąć wydarzenie cykliczne: co tydzień od {date} o {time}?"
+
+msgid "Delete recurring event: yearly from {date}?"
+msgstr "Usunąć wydarzenie cykliczne: co rok od {date}?"
+
+msgid "Delete recurring event: yearly from {date} at {time}?"
+msgstr "Usunąć wydarzenie cykliczne: co rok od {date} o {time}?"
+
+msgid "Delete the event from calendar {calendar}: {date} at {time} {title}?"
+msgstr "Usunąć wydarzenie z kalendarza {calendar}: {date} o {time} {title}?"
+
+msgid "Choose the day of the event to delete"
+msgstr "Wybierz dzień wydarzenia do usunięcia"
+
+msgid "Choose the day for deleting events"
+msgstr "Wybierz dzień do usunięcia wydarzeń"
+
+msgid "Delete event"
+msgstr "Usuń wydarzenie"
+
+msgid "Failed to delete the event. Press the “Details” button to learn more."
+msgstr "Nie udało się usunąć wydarzenia. Naciśnij przycisk „Szczegóły”, by dowiedzieć się więcej."
+
+msgid "Choose the month for deleting events"
+msgstr "Wybierz miesiąc do usunięcia wydarzeń"
+
+msgid "Deleted {deleted_count} events before the error occurred."
+msgstr "Usunięto {deleted_count} wydarzeń przed wystąpieniem błędu."
+
+msgid "Deleted {deleted_count} events."
+msgstr "Usunięto {deleted_count} wydarzeń."
+
+msgid "No events to delete for the selected day."
+msgstr "Brak wydarzeń do usunięcia dla wybranego dnia."
+
+msgid "No events were selected for deletion."
+msgstr "Nie wybrano żadnych wydarzeń do usunięcia."
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Recurring event deletion"
+msgstr "Usuwanie wydarzenia cyklicznego"
+
+msgid "This event belongs to a recurring series. Choose what you want to delete."
+msgstr "To wydarzenie należy do cyklu. Wybierz, co chcesz usunąć."
+
+msgid "One or more selected events belong to a recurring series. Choose how to delete recurring events in this selection."
+msgstr "Jedno lub więcej zaznaczonych wydarzeń należy do cyklu. Wybierz, jak usunąć wydarzenia cykliczne w tym zaznaczeniu."
+
+msgid "Choose an event to delete"
+msgstr "Wybierz wydarzenie do usunięcia"
+
+msgid "Events. Use space to select or unselect, then press Tab to move to the Delete button."
+msgstr "Wydarzenia. Użyj spacji, aby zaznaczyć lub odznaczyć, a następnie tabulatorem przejdź do przycisku Usuń."
+
+msgid "Deleted the event from calendar {calendar}: from {start_date} to {end_date} {title}"
+msgstr "Usunięto wydarzenie z kalendarza {calendar}: od {start_date} do {end_date} {title}"
+
+msgid "Deleted the event from calendar {calendar}: {date} {title}"
+msgstr "Usunięto wydarzenie z kalendarza {calendar}: {date} {title}"
+
+msgid "Deleted the event from calendar {calendar}: {date} at {time} {title}"
+msgstr "Usunięto wydarzenie z kalendarza {calendar}: {date} o {time} {title}"
+
+msgid "Deleted recurring event: daily from {date}"
+msgstr "Usunięto wydarzenie cykliczne: codziennie od {date}"
+
+msgid "Deleted recurring event: daily from {date} at {time}"
+msgstr "Usunięto wydarzenie cykliczne: codziennie od {date} o {time}"
+
+msgid "Deleted recurring event: monthly from {date}"
+msgstr "Usunięto wydarzenie cykliczne: co miesiąc od {date}"
+
+msgid "Deleted recurring event: monthly from {date} at {time}"
+msgstr "Usunięto wydarzenie cykliczne: co miesiąc od {date} o {time}"
+
+msgid "Deleted recurring event: weekly from {date}"
+msgstr "Usunięto wydarzenie cykliczne: co tydzień od {date}"
+
+msgid "Deleted recurring event: weekly from {date} at {time}"
+msgstr "Usunięto wydarzenie cykliczne: co tydzień od {date} o {time}"
+
+msgid "Deleted recurring event: yearly from {date}"
+msgstr "Usunięto wydarzenie cykliczne: co rok od {date}"
+
+msgid "Deleted recurring event: yearly from {date} at {time}"
+msgstr "Usunięto wydarzenie cykliczne: co rok od {date} o {time}"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Choose the day of the event to edit"
+msgstr "Wybierz dzień wydarzenia do edycji"
+
+msgid "Choose the day for editing events"
+msgstr "Wybierz dzień do edycji wydarzeń"
+
+msgid "Edit event"
+msgstr "Edytuj wydarzenie"
+
+msgid "Failed to update the event. Press the “Details” button to learn more."
+msgstr "Nie udało się zaktualizować wydarzenia. Naciśnij przycisk „Szczegóły”, by dowiedzieć się więcej."
+
+msgid "Choose the month for editing events"
+msgstr "Wybierz miesiąc do edycji wydarzeń"
+
+msgid "No events to edit for the selected day."
+msgstr "Brak wydarzeń do edycji dla wybranego dnia."
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Recurring event editing"
+msgstr "Edycja wydarzenia cyklicznego"
+
+msgid "This event belongs to a recurring series. Choose what you want to edit."
+msgstr "To wydarzenie należy do cyklu. Wybierz, co chcesz edytować."
+
+msgid "Choose an event to edit"
+msgstr "Wybierz wydarzenie do edycji"
+
+msgid "Events"
+msgstr "Wydarzenia"
+
+msgid "Updated the event in calendar {calendar}: from {start_date} to {end_date} {title}"
+msgstr "Zaktualizowano wydarzenie w kalendarzu {calendar}: od {start_date} do {end_date} {title}"
+
+msgid "Updated the event in calendar {calendar}: {date} {title}"
+msgstr "Zaktualizowano wydarzenie w kalendarzu {calendar}: {date} {title}"
+
+msgid "Updated the event in calendar {calendar}: {date} at {time} {title}"
+msgstr "Zaktualizowano wydarzenie w kalendarzu {calendar}: {date} o {time} {title}"
+
+msgid "Updated recurring event: daily from {date}"
+msgstr "Zaktualizowano wydarzenie cykliczne: codziennie od {date}"
+
+msgid "Updated recurring event: daily from {date} at {time}"
+msgstr "Zaktualizowano wydarzenie cykliczne: codziennie od {date} o {time}"
+
+msgid "Updated recurring event: monthly from {date}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co miesiąc od {date}"
+
+msgid "Updated recurring event: monthly from {date} at {time}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co miesiąc od {date} o {time}"
+
+msgid "Updated recurring event: weekly from {date}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co tydzień od {date}"
+
+msgid "Updated recurring event: weekly from {date} at {time}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co tydzień od {date} o {time}"
+
+msgid "Updated recurring event: yearly from {date}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co rok od {date}"
+
+msgid "Updated recurring event: yearly from {date} at {time}"
+msgstr "Zaktualizowano wydarzenie cykliczne: co rok od {date} o {time}"
+
+msgid "Could not open the error details file."
+msgstr "Nie udało się otworzyć pliku ze szczegółami błędu."
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Details"
+msgstr "Szczegóły"
+
+msgid "Event operation error"
+msgstr "Błąd operacji na wydarzeniu"
+
+msgid "Could not fetch events."
+msgstr "Nie udało się pobrać wydarzeń."
+
+msgid "{date}. {count} events."
+msgstr "{date}. {count} wydarzenia."
+
+msgid "Error"
+msgstr "Błąd"
+
+msgid "Could not fetch the calendar list."
+msgstr "Nie udało się pobrać listy kalendarzy."
+
+msgid "Could not delete the event."
+msgstr "Nie udało się usunąć wydarzenia."
+
+msgid "Could not fetch event list for editing."
+msgstr "Nie udało się pobrać listy wydarzeń do edycji."
+
+msgid "Could not fetch calendar events."
+msgstr "Nie udało się pobrać wydarzeń z kalendarza."
+
+msgid "Fetched {count} calendars."
+msgstr "Pobrano {count} kalendarzy."
+
+msgid "Fetched {count} events."
+msgstr "Pobrano {count} wydarzeń."
+
+msgid "Invalid days_ahead parameter."
+msgstr "Nieprawidłowy parametr days_ahead."
+
+msgid "Missing days_ahead parameter."
+msgstr "Brak parametru days_ahead."
+
+msgid "You are not signed in."
+msgstr "Nie jesteś zalogowany."
+
+msgid "Could not search calendar events."
+msgstr "Nie udało się wyszukać wydarzeń."
+
+msgid "Could not start Google Calendar API."
+msgstr "Nie udało się uruchomić Google Calendar API."
+
+msgid "Could not update the event."
+msgstr "Nie udało się zaktualizować wydarzenia."
+
+msgid "googleAuth import error: {error}"
+msgstr "Błąd importu googleAuth: {error}"
+
+msgid "Module import error: {error}"
+msgstr "Błąd importu modułów: {error}"
+
+msgid "settings import error: {error}"
+msgstr "Błąd importu settings: {error}"
+
+msgid "until {end}, {summary} in progress{calendar_label}"
+msgstr "do {end}, trwa {summary}{calendar_label}"
+
+msgid "Google sign-in has been cancelled."
+msgstr "Logowanie do Google zostało anulowane."
+
+msgid "Sign-in cancelled"
+msgstr "Logowanie anulowane"
+
+msgid "After you press OK, your default browser will open. When sign-in is complete, open the addon layer again and press 0."
+msgstr "Po naciśnięciu OK otworzy się domyślna przeglądarka. Po ukończeniu logowania uruchom warstwę dodatku ponownie i naciśnij 0."
+
+msgid "Starting Google sign-in"
+msgstr "Rozpoczynasz logowanie Google"
+
+msgid "Unable to complete Google sign-in."
+msgstr "Nie udało się zakończyć logowania do Google."
+
+msgid "Sign-in failed"
+msgstr "Logowanie nieudane"
+
+msgid "Complete sign-in in your browser, then open the addon layer and press 0 again."
+msgstr "Dokończ logowanie w przeglądarce, a następnie uruchom warstwę dodatku i naciśnij 0 ponownie."
+
+msgid "Sign-in in progress"
+msgstr "Logowanie w toku"
+
+msgid "Sign-in required"
+msgstr "Logowanie wymagane"
+
+msgid "You are signed in to Google Calendar."
+msgstr "Jesteś zalogowany do Google Calendar."
+
+msgid "Sign-in status"
+msgstr "Status logowania"
+
+msgid "{date}. {count} events."
+msgstr "{date}. {count} wydarzeń."
+
+msgid "Missing client_secret.json file."
+msgstr "Brak pliku client_secret.json."
+
+msgid "Missing file"
+msgstr "Brak pliku"
+
+msgid "Full mode"
+msgstr "Tryb rozszerzony"
+
+msgid "Short mode"
+msgstr "Tryb prosty"
+
+msgid "Error"
+msgstr "Błąd"
+
+msgid "Space toggles selection. Use Select all or Deselect all to quickly change the whole selection."
+msgstr "Spacja przełącza zaznaczenie. Użyj przycisków Zaznacz wszystko lub Odznacz wszystko, aby szybko zmienić cały wybór."
+
+msgid "Another Google Calendar Manager operation is already in progress."
+msgstr "Inna operacja Google Calendar Manager jest już w toku."
+
+msgid "No calendars available."
+msgstr "Brak dostępnych kalendarzy."
+
+msgid "No calendars selected. The primary calendar will be used."
+msgstr "Nie wybrano żadnych kalendarzy. Odczyt będzie używał kalendarza głównego."
+
+msgid "No data."
+msgstr "Brak danych."
+
+msgid "unnamed"
+msgstr "bez nazwy"
+
+msgid "untitled"
+msgstr "bez tytułu"
+
+msgid "You are not signed in. Open the Google Calendar Manager layer and press 0 to start Google sign-in."
+msgstr "Nie jesteś zalogowany. Użyj warstwy Google Calendar Manager i naciśnij 0, aby rozpocząć logowanie."
+
+msgid "{date}. One event."
+msgstr "{date}. Jedno wydarzenie."
+
+msgid "Choose the day for showing events"
+msgstr "Wybierz dzień do pokazania wydarzeń"
+
+msgid "Choose the day of events to show"
+msgstr "Wybierz dzień wydarzeń do pokazania"
+
+msgid "Choose the month for showing events"
+msgstr "Wybierz miesiąc do pokazania wydarzeń"
+
+msgid "Choose another day"
+msgstr "Wybierz inny dzień"
+
+msgid "Events for the selected day"
+msgstr "Wydarzenia dla wybranego dnia"
+
+msgid " (primary)"
+msgstr " (główny)"
+
+msgid "Entire series"
+msgstr "Cały cykl"
+
+msgid "Only this occurrence"
+msgstr "Tylko to wystąpienie"
+
+msgid ", recurring daily"
+msgstr ", cykliczne codziennie"
+
+msgid ", recurring monthly"
+msgstr ", cykliczne co miesiąc"
+
+msgid ", recurring weekly"
+msgstr ", cykliczne co tydzień"
+
+msgid ", recurring yearly"
+msgstr ", cykliczne co rok"
+
+msgid "Saved calendars: {names}"
+msgstr "Zapisano kalendarze: {names}"
+
+msgid "Add a new event to Google Calendar"
+msgstr "Dodaj nowe wydarzenie do Google Calendar"
+
+msgid "Read Google Calendar events for the day after tomorrow"
+msgstr "Odczyt wydarzeń na pojutrze z Google Calendar"
+
+msgid "Read Google Calendar events for 3 days from now"
+msgstr "Odczyt wydarzeń za 3 dni z Google Calendar"
+
+msgid "Read Google Calendar events for 4 days from now"
+msgstr "Odczyt wydarzeń za 4 dni z Google Calendar"
+
+msgid "Read Google Calendar events for 5 days from now"
+msgstr "Odczyt wydarzeń za 5 dni z Google Calendar"
+
+msgid "Read Google Calendar events for 6 days from now"
+msgstr "Odczyt wydarzeń za 6 dni z Google Calendar"
+
+msgid "Delete an event from Google Calendar"
+msgstr "Usuń wydarzenie z Google Calendar"
+
+msgid "Edit an event in Google Calendar"
+msgstr "Edytuj wydarzenie w Google Calendar"
+
+msgid "Opens the Google Calendar Manager layer"
+msgstr "Uruchamia warstwę Google Calendar Manager"
+
+msgid "Sign in to Google Calendar or check sign-in status"
+msgstr "Logowanie do Google Calendar lub sprawdzenie stanu logowania"
+
+msgid "Show events for a selected day"
+msgstr "Pokaż wydarzenia dla wybranego dnia"
+
+msgid "Search Google Calendar events"
+msgstr "Wyszukaj wydarzenia w Google Calendar"
+
+msgid "Choose Google Calendars to read"
+msgstr "Wybierz kalendarze Google do odczytu"
+
+msgid "Read today's Google Calendar events"
+msgstr "Odczyt wydarzeń na dziś z Google Calendar"
+
+msgid "Toggle speech mode"
+msgstr "Przełącz tryb odczytu"
+
+msgid "Read tomorrow's Google Calendar events"
+msgstr "Odczyt wydarzeń na jutro z Google Calendar"
+
+msgid "Custom search range"
+msgstr "Własny zakres wyszukiwania"
+
+msgid "Search events"
+msgstr "Wyszukaj wydarzenia"
+
+msgid "End day"
+msgstr "Dzień końcowy"
+
+msgid "End month"
+msgstr "Miesiąc końcowy"
+
+msgid "End date cannot be earlier than start date."
+msgstr "Data końcowa nie może być wcześniejsza niż data początkowa."
+
+msgid "Enter a valid end day."
+msgstr "Wpisz poprawny dzień końcowy."
+
+msgid "Enter a valid end month."
+msgstr "Wpisz poprawny miesiąc końcowy."
+
+msgid "Enter a valid end date."
+msgstr "Wpisz poprawną datę końcową."
+
+msgid "Enter a valid start date."
+msgstr "Wpisz poprawną datę początkową."
+
+msgid "Enter search text."
+msgstr "Wpisz szukany tekst."
+
+msgid "Enter a valid start day."
+msgstr "Wpisz poprawny dzień początkowy."
+
+msgid "Enter a valid start month."
+msgstr "Wpisz poprawny miesiąc początkowy."
+
+msgid "New search"
+msgstr "Nowe wyszukiwanie"
+
+msgid "No matching events found for \"{query}\" from {start_date} to {end_date}."
+msgstr "Nie znaleziono wydarzeń pasujących do „{query}” od {start_date} do {end_date}."
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Search text"
+msgstr "Szukany tekst"
+
+msgid "Next 12 months"
+msgstr "Najbliższe 12 miesięcy"
+
+msgid "Next month"
+msgstr "Najbliższy miesiąc"
+
+msgid "Next 3 months"
+msgstr "Najbliższe 3 miesiące"
+
+msgid "Next 6 months"
+msgstr "Najbliższe 6 miesięcy"
+
+msgid "Custom range"
+msgstr "Własny zakres"
+
+msgid "Search range"
+msgstr "Zakres wyszukiwania"
+
+msgid "Search results for \"{query}\". Found {count} matching events from {start_date} to {end_date}."
+msgstr "Wyniki wyszukiwania dla „{query}”. Znaleziono {count} pasujących wydarzeń od {start_date} do {end_date}."
+
+msgid "Search results for \"{query}\". Found one matching event from {start_date} to {end_date}."
+msgstr "Wyniki wyszukiwania dla „{query}”. Znaleziono jedno pasujące wydarzenie od {start_date} do {end_date}."
+
+msgid "Search results"
+msgstr "Wyniki wyszukiwania"
+
+msgid "Start day"
+msgstr "Dzień początkowy"
+
+msgid "Start month"
+msgstr "Miesiąc początkowy"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "All events deselected."
+msgstr "Odznaczono wszystkie wydarzenia."
+
+msgid "All events selected."
+msgstr "Zaznaczono wszystkie wydarzenia."
+
+msgid "Calendar selection cancelled."
+msgstr "Anulowano wybór kalendarzy."
+
+msgid "Show keyboard shortcuts"
+msgstr "Pokaż skróty klawiszowe"
+
+msgid "NVDA+Shift+G — Google Calendar Manager layer\n"
+"0 — sign in or sign-in status\n"
+"1 — today's events\n"
+"2 — tomorrow's events\n"
+"3 — events for the day after tomorrow\n"
+"4 — events in 3 days\n"
+"5 — events in 4 days\n"
+"6 — events in 5 days\n"
+"7 — events in 6 days\n"
+"8 — switch reading mode\n"
+"9 — choose calendars\n"
+"N — add event\n"
+"E — edit event\n"
+"U — delete event\n"
+"P — show events for a selected day\n"
+"S — search events\n"
+"H — show shortcut help"
+msgstr "NVDA+Shift+G — warstwa Google Calendar Manager\n"
+"0 — logowanie lub status logowania\n"
+"1 — wydarzenia na dziś\n"
+"2 — wydarzenia na jutro\n"
+"3 — wydarzenia na pojutrze\n"
+"4 — wydarzenia za 3 dni\n"
+"5 — wydarzenia za 4 dni\n"
+"6 — wydarzenia za 5 dni\n"
+"7 — wydarzenia za 6 dni\n"
+"8 — przełącz tryb odczytu\n"
+"9 — wybór kalendarzy\n"
+"N — dodaj wydarzenie\n"
+"E — edytuj wydarzenie\n"
+"U — usuń wydarzenie\n"
+"P — pokaż wydarzenia dla wybranego dnia\n"
+"S — wyszukaj wydarzenia\n"
+"H — pokaż pomoc ze skrótami"
+
+msgid "Keyboard shortcuts"
+msgstr "Skróty klawiszowe"
+
+msgid "{start} to {end}, {summary}{calendar_label}"
+msgstr "{start} do {end}, {summary}{calendar_label}"
+
+msgid "{start}, {summary}{calendar_label}"
+msgstr "{start}, {summary}{calendar_label}"
+
+msgid "not selected"
+msgstr "niezaznaczone"
