@@ -149,6 +149,10 @@ Paczka dodatku zawiera szczegółową instrukcję:
 - `docs/readme.html` — angielski,
 - `docs/readme_pl.html` — polski.
 
+## Licencja
+
+Google Calendar Manager jest udostępniany na warunkach GNU General Public License w wersji 3 lub dowolnej późniejszej (`GPL-3.0-or-later`). Zobacz [LICENSE](LICENSE) oraz [LICENSE-NOTICE.md](LICENSE-NOTICE.md).
+
 ## Autor
 
 Piotr Tarasewicz
