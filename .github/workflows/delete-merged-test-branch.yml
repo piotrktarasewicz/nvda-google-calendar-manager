@@ -1,0 +1,21 @@
+name: Delete merged test branch
+
+on:
+  push:
+    branches:
+      - agent/fix-event-editing-1.0.4
+    paths:
+      - .github/workflows/delete-merged-test-branch.yml
+
+permissions:
+  contents: write
+
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged test branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --delete agent/fix-event-editing-1.0.4
